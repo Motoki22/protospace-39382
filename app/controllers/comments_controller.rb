@@ -6,6 +6,7 @@ before_action :set_prototype, only: [:create,:show]
     if @comment.save
       redirect_to @prototype
     else
+      @comments = @prototype.comments.includes(:user)
       render "prototypes/show" 
     end
   end
