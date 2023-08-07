@@ -7,10 +7,6 @@ class User < ApplicationRecord
   validates :profile, presence: true
   validates :occupation, presence: true
   validates :position, presence: true
-
-  def show
-    @user = User.find(params[:id])
-  end
   
   has_many :prototypes
   has_many :comments
